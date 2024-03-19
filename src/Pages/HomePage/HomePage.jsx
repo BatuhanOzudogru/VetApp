@@ -8,7 +8,7 @@ function HomePage() {
   return (
     <>
       <div className="center">
-        
+        {/*  Home Page Content */}
         <div className="home-desc">
           <h2>
             Welcome! Welcome to our veterinary clinic! We're here for the health and happiness of your furry friends!
@@ -17,10 +17,10 @@ function HomePage() {
 
         <div className="home-services">
           <h2>Our Services</h2>
-
+ {/*  Services Content*/}
           <div className="home-services-content">
 
-
+       
           <div className="home-services-p">
             <ul>
                 <li>General veterinary services</li>
@@ -30,7 +30,7 @@ function HomePage() {
                 <li>Dental care and treatments</li>
             </ul>
           </div>
-
+        {/*   Services Image */}
           <div className="home-services-img">
             <img src="https://scontent.fsaw2-2.fna.fbcdn.net/v/t39.30808-6/257379140_1248316778999242_4092082968837736356_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4xhV_4C-SycAX80v3VJ&_nc_ht=scontent.fsaw2-2.fna&oh=00_AfBHGKi87QOkS1MFZ7jgLjeRXpRGr5lx2Bvc8tENuXIljA&oe=65FE6305" alt="" />
           </div>
@@ -38,7 +38,7 @@ function HomePage() {
           </div>
         
         </div>
-
+        {/* Veterinarians */}
         <div className="home-docs">
           <h2>Our Veterinarians</h2>
           <div className="doctor-list">
@@ -56,7 +56,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-
+      {/*  Contact Form */}
         <div className="home-contact">
           <h2>How Can We Help?</h2>
           <p>
@@ -80,7 +80,7 @@ function HomePage() {
           
         </div>
       </div>
-
+      {/*  Footer */}
       <footer className="footer">
         <div className="footer-contact">
         <h2>Contact Information</h2>

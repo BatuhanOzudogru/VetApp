@@ -29,12 +29,14 @@ function Appointment() {
   const [doctor, setDoctor] = useState([]);
   const [animal, setAnimal] = useState([]);
   const [availableDate, setAvailableDate] = useState([]);
+
+  // States for new and updated appointments
   const [newAppointment, setNewAppointment] = useState({
     appointmentDate: "",
     doctor: { id: "doctor" },
     animal: { id: "animal" },
   });
-
+  // States for new and updated appointments
   const [updateAppointment, setUpdateAppointment] = useState({
     appointmentDate: "",
     doctor: { id: "doctor" },
@@ -45,7 +47,7 @@ function Appointment() {
     message: "",
     severity: "",
   });
-
+  // Function to get appointments, doctors, animals and available dates
   useEffect(() => {
     getAppointments().then((data) => {
       setAppointment(data.data.items);
@@ -62,7 +64,7 @@ function Appointment() {
     });
     setReload(false);
   }, [reload]);
-
+  // Function to delete an appointment
   const handleDelete = async (id) => {
     try {
       await deleteAppointment(id).then(() => {
@@ -73,7 +75,7 @@ function Appointment() {
       handleAxiosError(error);
     }
   };
-
+  // Function to update an appointment
   const handleUpdate = async () => {
     try {
       await updateAppointmentFunc(updateAppointment).then(() => {
@@ -89,7 +91,7 @@ function Appointment() {
       handleAxiosError(error);
     }
   };
-
+  // Function to create an appointment
   const handleCreate = async () => {
     try {
       await createAppointment(newAppointment).then(() => {
@@ -108,7 +110,7 @@ function Appointment() {
 
   const [selectedDoctor, setSelectedDoctor] = useState("doctor");
   const [selectedDoctorName, setSelectedDoctorName] = useState("doctor");
-
+  // Function to handle doctor change
   const handleDoctorChange = (e) => {
     setSelectedDoctor(e.target.value);
     setSelectedDoctorName(e.target.options[e.target.selectedIndex].text);
@@ -119,7 +121,7 @@ function Appointment() {
   };
 
   const [selectedAnimal, setSelectedAnimal] = useState("animal");
-
+  // Function to handle animal change
   const handleAnimalChange = (e) => {
     setSelectedAnimal(e.target.value);
   };
@@ -132,7 +134,7 @@ function Appointment() {
 
   const [searchStartDateDoctor, setSearchStartDateDoctor] = useState("");
   const [searchEndDateDoctor, setSearchEndDateDoctor] = useState("");
-
+  // Function to get appointments by animal and period
   const handleSearchByAnimalAndPeriod = () => {
     getAppointmentsByAnimalIdAndPeriod(
       searchAnimal,
@@ -142,7 +144,7 @@ function Appointment() {
       setAppointment(data.data);
     });
   };
-
+  // Function to get appointments by doctor and period
   const handleSearchByDoctorAndPeriod = () => {
     getAppointmentsByDoctorIdAndPeriod(
       searchDoctor,
@@ -152,7 +154,7 @@ function Appointment() {
       setAppointment(data.data);
     });
   };
-
+  // Function to clear search
   const handleClearSearch = () => {
     setAppointment(originalAppointment);
     setSearchAnimal("animal");
@@ -162,16 +164,16 @@ function Appointment() {
     setSearchStartDateDoctor("");
     setSearchEndDateDoctor("");
   };
-
+  // Function to handle axios error
   const handleAxiosError = (error) => {
     let errorMessage = "An error occurred.";
-    
+
     if (error.response.data.data) {
       errorMessage = error.response.data.data[0];
     } else if (error.response.data.message) {
       errorMessage = error.response.data.message;
-    } 
-    
+    }
+
     setNotification({ message: errorMessage, severity: "error" });
     setTimeout(() => {
       setNotification({ message: "", severity: "" });
@@ -229,7 +231,7 @@ function Appointment() {
       headerClassName: "column-header",
     },
   ];
-
+  // Function to map appointments
   const rows = appointment.map((item) => ({
     id: item.id,
     appointmentDate: item.appointmentDate,
@@ -243,7 +245,7 @@ function Appointment() {
     <>
       <div className="center">
         <h1 className="page-header">Appointment Management</h1>
-
+        {/*  Table to display appointments */}
         <div className="table">
           <h2 className="table-header">Appointment List</h2>
           <div className="srch-header">
@@ -261,7 +263,7 @@ function Appointment() {
         `}</style>
             <DataGrid rows={rows} columns={columns} />
           </div>
-
+          {/* Search by animal and doctor */}
           <div className="srch-all">
             <div className="srch">
               <div className="slct">
@@ -279,6 +281,7 @@ function Appointment() {
                   })}
                 </select>
               </div>
+              {/* Search by date */}
               <div className="srch-dates">
                 <div className="start">
                   <h4>Start</h4>
@@ -382,7 +385,7 @@ function Appointment() {
             </div>
           </div>
         </div>
-
+        {/*  Add and update appointments */}
         <div className="app-add-upd">
           <div className="app-add-upd-header">
             <h2>Available Dates</h2>
@@ -401,7 +404,7 @@ function Appointment() {
                   );
                 })}
               </div>
-
+              {/* Select doctor */}
               <div className="slct-doc">
                 <select
                   value={
@@ -430,7 +433,7 @@ function Appointment() {
                 </select>
               </div>
             </div>
-
+            {/*  Select date and animal */}
             <div className="app-op-right">
               <div className="slct-date">
                 <input
@@ -466,7 +469,6 @@ function Appointment() {
                   }}
                 />
               </div>
-
               <div className="slct-animal">
                 <select
                   value={
@@ -496,7 +498,7 @@ function Appointment() {
               </div>
             </div>
           </div>
-
+          {/*  Buttons to update and add appointments */}
           <div className="app-btn">
             <Button
               variant="outlined"

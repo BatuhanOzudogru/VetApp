@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import UpdateIcon from "@mui/icons-material/Update";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import DateRangeIcon from '@mui/icons-material/DateRange';
+import DateRangeIcon from "@mui/icons-material/DateRange";
 import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
 import { IconButton } from "@mui/material";
 import { Button } from "@mui/material";
@@ -61,7 +61,7 @@ function Doctor() {
   });
 
   var newArray = [];
-
+  // Function to select the doctor to update
   const selectUpdateDoctor = (event) => {
     newArray = dates.filter((date) => date.doctor.id == event.id);
 
@@ -77,7 +77,7 @@ function Doctor() {
       setReload(true);
     });
   };
-
+  // Function to get the doctors and available dates
   useEffect(() => {
     getDoctors().then((data) => {
       setDoctor(data.data.items);
@@ -87,7 +87,7 @@ function Doctor() {
       setDates(data.data.items);
     });
   }, [reload]);
-
+  // Function to delete the doctor
   const handleDelete = async (id) => {
     try {
       await deleteDoctor(id).then(() => {
@@ -98,7 +98,7 @@ function Doctor() {
       handleAxiosError(error);
     }
   };
-
+  // Function to delete the available date
   const handleDateDelete = async (id) => {
     try {
       await deleteAvailableDate(id).then(() => {
@@ -111,10 +111,10 @@ function Doctor() {
       handleAxiosError(error);
     }
   };
-
+  // Function to update the doctor
   const handleUpdate = async () => {
     try {
-      await  updateDoctorFunc(updateDoctor).then(() => {
+      await updateDoctorFunc(updateDoctor).then(() => {
         setReload(true);
       });
       setUpdateDoctor({
@@ -140,14 +140,14 @@ function Doctor() {
       handleAxiosError(error);
     }
   };
-
+  // Function to handle the new doctor
   const handleNewDoctor = (event) => {
     setNewDoctor({
       ...newDoctor,
       [event.target.name]: event.target.value,
     });
   };
-
+  // Function to create the doctor
   const handleCreate = async () => {
     try {
       await createDoctor(newDoctor).then(() => {
@@ -173,14 +173,14 @@ function Doctor() {
     }
   };
 
-
+  // Function to handle the axios error
   const handleAxiosError = (error) => {
     let errorMessage = "An error occurred.";
     if (error.response.data.data) {
       errorMessage = error.response.data.data[0];
     } else if (error.response.data.message) {
       errorMessage = error.response.data.message;
-    } 
+    }
     setNotification({ message: errorMessage, severity: "error" });
     setTimeout(() => {
       setNotification({ message: "", severity: "" });
@@ -252,7 +252,7 @@ function Doctor() {
       headerClassName: "column-header",
     },
   ];
-
+  // Function to map the doctor and available dates
   const rows = doctor.map((item) => ({
     id: item.id,
     name: item.name,
@@ -271,7 +271,7 @@ function Doctor() {
   };
 
   const getAvailableDatesForDoctor = (doctorId) => {
-    // Doktor ID'siyle birlikte API'ye istek gönder ve sadece seçili doktorun available datelerini al
+    // Assuming getAvailableDates is a function to get available dates from the API
     return getAvailableDates().then((data) => {
       const filteredDates = data.data.items.filter(
         (date) => date.doctor.id === doctorId
@@ -299,7 +299,7 @@ display: none;
         </div>
 
         <h2 className="doctor-op-title">Doctor Operations</h2>
-
+        {/*  Doctor operations */}
         <div className="doctor-operations">
           <div className="doctor-op-left">
             <div className="doctor-upd-add">
@@ -357,7 +357,7 @@ display: none;
                 }}
               />
             </div>
-
+            {/* Doctor buttons */}
             <div className="doctor-buttons">
               <Button
                 variant="outlined"
@@ -376,7 +376,7 @@ display: none;
               </Button>
             </div>
           </div>
-
+          {/* Available dates */}
           <div className="doctor-op-right">
             <h2>Available Dates</h2>
 
@@ -403,7 +403,7 @@ display: none;
                   onClick={() => {
                     createAvailableDate(newDates).then(() => {
                       setReload(true);
-                      
+
                       // Sadece seçili doktorun available datelerini güncelle
                       getAvailableDatesForDoctor(selectedDoctorId).then(
                         (filteredDates) => {
@@ -417,6 +417,7 @@ display: none;
                   Add
                 </Button>
               </div>
+              {/*  Available dates list */}
               <div className="doctor-date-list">
                 <table>
                   <tbody>
@@ -442,8 +443,8 @@ display: none;
         </div>
       </div>
 
-         {/* Alert to display errors and success messages */}
-         {notification.message && (
+      {/* Alert to display errors and success messages */}
+      {notification.message && (
         <Alert
           severity={notification.severity}
           onClose={() => setNotification({ message: "", severity: "" })}
