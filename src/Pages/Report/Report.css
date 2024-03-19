@@ -1,0 +1,63 @@
+.column-header {
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #d83f31;
+  color: whitesmoke;
+}
+
+.page-header {
+  text-align: center;
+  margin: 20px 0;
+  font-family: monospace;
+  font-size: 28px;
+}
+
+.table-search {
+  padding-left: 10px;
+  width: 250px;
+}
+
+.table {
+  font-family: monospace;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.report-operations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.report-operations input, .report-operations select {
+  height: 45px;
+  padding-left: 10px;
+}
+
+.report-buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.report-buttons button:first-child {
+  margin-right: 8px;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+.report-add-btn {
+  background-color: #d83f31 !important;
+}
+
+.report-operations h2 {
+  font-family: monospace;
+
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+.report-buttons {
+  margin-top: 50px;
+}

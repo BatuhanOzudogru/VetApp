@@ -1,0 +1,180 @@
+.vaccine-srch-all {
+  display: flex;
+}
+
+.vaccine-srch {
+ width: 250px;
+ height: 200px;
+ text-align: center;
+ position: relative;
+}
+
+.vaccine-slct  {
+  position: absolute;
+  top: 50%;
+  left: 21%;
+}
+
+
+.vaccine-slct select {
+  width: 150px;
+  height: 45px;
+  text-align: center;
+}
+
+.vaccine-srch-btn {
+  display: flex;
+  position: absolute;
+  top: 132%;
+  left: 4.5%;
+}
+
+.clear button {
+  margin-right: 8px;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+.vaccine-scnd-btn {
+  background-color: #d83f31 !important;
+}
+
+.vaccine-srch h2 {
+  font-family: monospace;
+  margin-top: 15px;
+}
+
+.vaccine-srch-dates {
+  position: absolute;
+  top: 36%;
+  left: 12.5%;
+} 
+
+.vaccine-srch-dates input {
+  width: 190px;
+}
+
+.vaccine-start {
+  margin-bottom: 10px;
+}
+
+
+
+.vaccine-operations {
+  display: flex;
+  margin-top: 20px;
+}
+
+.vaccine-report-select {
+  display: flex;
+}
+
+.slct-animal {
+  margin-left: 25px;
+}
+
+.slct-animal select {
+  width: 150px;
+  height: 40px;
+}
+
+.vaccine-upd-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.vaccine-upd-add input {
+  width: 494.78px;
+  height: 45px;
+
+}
+
+.vaccine-op-title {
+  font-family: monospace;
+}
+
+.vac-rep-tit-cmb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vac-rep-tit-cmb h2 {
+  position: relative;
+  top: 12px;
+  font-family: monospace;
+}
+
+.vaccine-upd-add {
+  position: relative;
+  top: 16px;
+}
+
+.vaccine-op-right h2 {
+  text-align: center;
+  font-family: monospace;
+}
+
+.vaccine-op-left {
+  margin-right: 2.5%;
+}
+
+.vaccine-op-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.vaccine-buttons {
+  position: absolute;
+  bottom: 5px;
+  right: 24px;
+}
+
+.vaccine-add-btn {
+  background-color: #d83f31 !important ;
+}
+
+.vaccine-upd-add {
+  gap: 5px;
+}
+
+.vaccine-dates {
+  display: flex;
+}
+
+.vaccine-dates-item input {
+  width: 240px;
+  margin-right: 14.78px;
+}
+
+.vaccine-report-item input {
+  width: 240px;
+  height: 45px;
+}
+
+.vaccine-report-item {
+  text-align: center;
+  position: absolute;
+  top: 88%;
+  left: 72%;
+  width: 240px;
+  height: 45px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vaccine-dates-item p {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.vaccine-upd-btn {
+  margin-right: 8px !important;
+  color: #d83f31 !important;
+  border-color: #d83f31 !important;
+}
+
+
+

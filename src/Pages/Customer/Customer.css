@@ -1,0 +1,70 @@
+/* Styles for the page header */
+.page-header {
+  text-align: center; 
+  margin: 20px 0; 
+  font-family: monospace; 
+  font-size: 28px; 
+}
+
+/* Styles for the table search input */
+.table-search {
+  padding-left: 10px; 
+  width: 250px; 
+}
+
+/* Styles for the table container */
+.table {
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 10px; 
+  font-family: monospace; 
+  font-size: 18px; 
+}
+
+/* Styles for the customer operations section */
+.customer-operations {
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+/* Styles for input fields within the customer operations section */
+.customer-operations input {
+  height: 45px; 
+  padding-left: 10px; 
+}
+
+/* Styles for the buttons within the customer operations section */
+.customer-buttons {
+  display: flex; 
+  justify-content: flex-end; 
+}
+
+/* Styles for the first button within the customer operations section */
+.customer-buttons button:first-child {
+  margin-right: 8px; 
+  color: #d83f31; 
+  border-color: #d83f31; 
+}
+
+/* Styles for the "Add" button within the customer operations section */
+.customer-add-btn {
+  background-color: #d83f31 !important; 
+}
+
+/* Styles for the heading within the customer operations section */
+.customer-operations h2 {
+  font-family: monospace; 
+  font-size: 26px; 
+  margin-top: 20px; 
+}
+
+/* Styles for the column headers in the table */
+.column-header {
+  font-family: monospace; 
+  font-size: 14px; 
+  background-color: #d83f31; 
+  color: whitesmoke; 
+}
+
+

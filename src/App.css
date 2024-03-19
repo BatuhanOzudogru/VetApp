@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  gap: 1rem;
+  padding: 10px;
+}
+.menu-box a {
+  text-decoration: none;
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: inherit;
+  font-size: 18.72px;
+}
+.menu-box {
+  justify-content: right;
+}
+.menu-responsive {
+  text-align: center;
+}
+.menu-responsive a {
+  text-decoration: none;
+  color: #c03225;
+  font-family: monospace;
+  font-size: 16px;
+}
+.center {
+  margin: 0 24px;
+}

@@ -1,0 +1,148 @@
+.home-desc h2 {
+  font-family: monospace;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.home-services {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.home-services h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.home-services-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.home-services-p {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-services-p ul{
+   margin-top: 60px;
+  }
+
+.home-services-p li {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.home-services-img {
+  display: flex;
+}
+
+.home-services-img img {
+  height: 260px;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.home-docs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.home-docs h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.doctor-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.doctor {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor img {
+  width: 225px;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.doctor p {
+  text-align: center;
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.home-contact {
+  margin-top: 20px;
+}
+
+.home-contact h2 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 24px;
+}
+
+.home-contact p {
+  font-family: monospace;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.home-contact-inp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.home-contact-inp input {
+  width: 550px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.custom-textarea {
+  height: 150px;
+  width: 550px;
+}
+
+.home-contact-btn {
+  text-align: end;
+}
+
+.home-contact-btn button {
+    color: #d83f31; 
+    border-color: #d83f31; 
+}
+
+.footer {
+    background-color: #d83f31;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    color: whitesmoke;
+    font-family: monospace;
+}
+
+.footer-contact h2, .footer-info h2 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-contact p , .footer-info p{
+    font-size: 14px;
+    margin-bottom: 10px;
+    
+}
+

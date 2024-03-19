@@ -1,0 +1,142 @@
+.app-up-all {
+  display: flex;
+}
+
+.srch-header {
+  width: 45%;
+  display: flex;
+  font-family: monospace;
+  justify-content: space-between;
+}
+
+.srch-all {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+}
+
+.slct {
+  height: 56px;
+  padding: 8px 0;
+  margin-bottom: 60px;
+}
+
+.slct select{
+  text-align: center;
+  width: 230.66px;
+  height: 40px;
+  align-self: center;
+  
+}
+
+.srch-dates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start h4, .end h4 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.srch-dates input {
+  height: 30px;
+  width: 100px;
+}
+
+.srch-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.clear button {
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+.scnd-btn {
+  background-color: #d83f31 !important ;
+}
+
+.srch-btn button {
+  height: 30px;
+  width: 100px;
+  margin-top: 100px;
+}
+
+.app-add-upd {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-op, .app-op-left, .app-op-right  {
+  display: flex;
+}
+
+.app-op-left {
+  width: 50%;
+  justify-content: space-between;
+  margin-right: 5%;
+}
+
+.app-date-list {
+  height: 260px; /* Yüksekliği sabit yap */
+  width: 300px; /* Genişliği sabit yap */
+  border: solid;
+  border-width: 1px;
+  overflow-y: auto; /* Dikey scrollbar ekle, gerektiğinde görüntülenecek */
+}
+
+.app-date-list table {
+  margin: 10px auto;
+}
+
+.app-date-list td {
+  padding: 5px; /* Hücre içeriğinin etrafında boşluk bırak */
+}
+
+.app-add-upd input, .app-add-upd select {
+  text-align: center;
+  width: 230.66px;
+  height: 40px;
+  align-self: center;
+}
+
+.slct-doc, .slct-date, .slct-animal {
+  display: flex;
+  align-items: center;
+}
+
+
+.app-op-right {
+  display: flex;
+  width: 45%;
+  justify-content: space-between;
+}
+
+.app-btn {
+  display: flex;
+  margin-left: 1149.2px;
+}
+
+.app-btn button:first-child {
+  margin-right: 8px;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+.app-add-btn {
+  background-color: #d83f31 !important;
+}
+
+.date {
+  text-align: center;
+  padding: 12.5px 0;
+}
+
+.app-add-upd-header {
+  font-family: monospace;
+  margin: 20px 0;
+  font-size: 18px;
+}

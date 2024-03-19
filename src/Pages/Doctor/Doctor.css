@@ -1,0 +1,97 @@
+.doctor-operations {
+  display: flex;
+  column-gap: 50px;
+}
+
+.doctor-upd-add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doctor-upd-add h2 {
+  text-align: start;
+  font-family: monospace;
+}
+
+.doctor-upd-add input, .doctor-upd-add select  {
+  height: 35.5px;
+  padding-left: 10px;
+  width: 702px;
+}
+
+.doctor-op-title {
+  font-family: monospace;
+  font-size: 26px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.doctor-op-right {
+  display: flex;
+  flex-direction: column;
+}
+.doctor-op-right h2 {
+  font-family: monospace;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.doctor-date {
+  display: flex;
+}
+
+.date-add {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-add input {
+  height: 35.5px;
+  width: 200px;
+}
+
+.date-add button {
+  height: 25px;
+  width: 50px;
+  margin-left: 75px;
+  margin-top: 10px;
+  background-color: #d83f31 !important;
+  padding: 15px;
+}
+
+.doctor-date-list {
+  height: 217.5px; /* Yüksekliği sabit yap */
+  width: 300px; /* Genişliği sabit yap */
+  border: solid;
+  border-width: 1px;
+  overflow-y: auto; /* Dikey scrollbar ekle, gerektiğinde görüntülenecek */
+}
+
+.doctor-date-list table {
+  margin: 10px auto;
+}
+
+.doctor-date-list td {
+  padding: 5px; /* Hücre içeriğinin etrafında boşluk bırak */
+}
+
+
+
+.doctor-buttons {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.doctor-buttons button:first-child {
+  margin-right: 8px;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+.doctor-add-btn {
+  background-color: #d83f31 !important;
+}
+  

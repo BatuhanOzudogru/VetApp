@@ -1,0 +1,57 @@
+/* Styling for the search input */
+.animal-search-input {
+  padding: 8px;
+  width: 250px;
+}
+
+/* Styling for the search buttons */
+.animal-search button {
+  font-size: 14px;
+  font-family: monospace;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+/* Styling for the search by customer button */
+.srch-customer-btn {
+  margin: 0 5px 0 10px !important;
+}
+
+/* Styling for the animal operations container */
+.animal-operations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styling for input fields and select dropdowns within the animal operations */
+.animal-operations input,
+.animal-operations select  {
+  height: 35.5px;
+  padding-left: 10px;
+}
+
+/* Styling for the heading "Animal Operations" */
+.animal-operations h2 {
+  font-family: monospace;
+  font-size: 26px;
+  margin-top: 20px;
+}
+
+/* Styling for the buttons within the animal operations */
+.animal-buttons {
+  display: flex;
+  justify-content: end;
+}
+
+/* Styling for the first button within the animal buttons */
+.animal-buttons button:first-child {
+  margin-right: 8px;
+  color: #d83f31;
+  border-color: #d83f31;
+}
+
+/* Styling for the add button within the animal buttons */
+.animal-add-btn {
+  background-color: #d83f31 !important;
+}
