@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://vetclinicrestapi.onrender.com" ;
+const BASE_URL = import.meta.env.VITE_APP_API_BASE_URL;
 
 export const getAnimals = async () => {
   const { data } = await axios.get(BASE_URL + "/v1/animals");
