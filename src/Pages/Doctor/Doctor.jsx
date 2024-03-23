@@ -102,8 +102,9 @@ function Doctor() {
   const handleDateDelete = async (id) => {
     try {
       await deleteAvailableDate(id).then(() => {
-        getAvailableDates().then((data) => {
-          setFilteredDates(data.data.items);
+        getAvailableDatesForDoctor(selectedDoctorId).then((filteredDates) => {
+          setFilteredDates(filteredDates);
+          setReload(true);
         });
       });
       handleSuccessfulResponse("Date deleted successfully.", "success");
@@ -172,6 +173,35 @@ function Doctor() {
       handleAxiosError(error);
     }
   };
+
+  const handleDateAdd = async () => {
+    try {
+      await createAvailableDate(newDates).then(() => {
+        
+        getAvailableDatesForDoctor(selectedDoctorId).then((filteredDates) => {
+          setFilteredDates(filteredDates);
+        });
+
+        setReload(true);
+      
+        setNewDates({
+          ...newDates,
+          date: "",
+        });
+
+       
+        
+      });
+    } catch (error) {
+      handleAxiosError(error);
+      // Hata durumunda input alanını sıfırla
+      setNewDates({
+        ...newDates,
+        date: "",
+      });
+    }
+  };
+  
 
   // Function to handle the axios error
   const handleAxiosError = (error) => {
@@ -401,21 +431,16 @@ display: none;
                   variant="contained"
                   endIcon={<DateRangeIcon />}
                   onClick={() => {
-                    createAvailableDate(newDates).then(() => {
-                      setReload(true);
-
-                      // Sadece seçili doktorun available datelerini güncelle
-                      getAvailableDatesForDoctor(selectedDoctorId).then(
-                        (filteredDates) => {
-                          setFilteredDates(filteredDates);
-                          console.log(filteredDates);
-                        }
-                      );
-                    });
+                    handleDateAdd();
                   }}
                 >
                   Add
                 </Button>
+                <p style={{ marginTop: "60px", marginRight: "20px" }}>
+                  To add a working day, first select the doctor to whom you want
+                  to add a working day by clicking on the "
+                  <UpdateIcon />" sign from the list above.
+                </p>
               </div>
               {/*  Available dates list */}
               <div className="doctor-date-list">

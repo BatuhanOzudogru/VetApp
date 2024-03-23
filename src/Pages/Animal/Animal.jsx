@@ -13,8 +13,9 @@ import {
   createAnimal,
   updateAnimalFunc,
   getAnimalByName,
+  getAnimalByCustomerName
 } from "../../APIs/Animal";
-import { getCustomers, getCustomerByName } from "../../APIs/Customer";
+import { getCustomers} from "../../APIs/Customer";
 import "./Animal.css";
 
 function Animal() {
@@ -53,22 +54,6 @@ function Animal() {
     });
     setReload(false);
   }, [reload]);
-
-  useEffect(() => {
-    const results = animal.filter((item) =>
-      item.customer.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setSearchResults(results);
-  }, [animal]);
-
-    useEffect(() => {
-    const results = animal.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setSearchResults(results);
-  }, [animal]);
 
   // Handlers
   const handleDelete = async (id) => {
@@ -122,19 +107,35 @@ function Animal() {
     setNewAnimal({ ...newAnimal, customer: { id: selectedCustomerId } });
   };
 
-  const handleSearchByCustomer = () => {
-    const results = animal.filter((item) =>
-      item.customer.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
+
+  const handleSearchByAnimal = async () => {
+    try {
+      if (searchTerm == "") {
+        const data = await getAnimals();
+        setAnimal(data.data.items);
+      } else {
+        const data = await getAnimalByName(searchTerm);
+        setAnimal(data.data);
+      }
+    } catch (error) {
+      handleAxiosError(error);
+    }
   };
 
-  const handleSearchByAnimal = () => {
-    const results = animal.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
+  const handleSearchByCustomer = async () => {
+    try {
+      if (searchTerm == "") {
+        const data = await getAnimals();
+        setAnimal(data.data.items);
+      } else {
+        const data = await getAnimalByCustomerName(searchTerm);
+        setAnimal(data.data);
+      }
+    } catch (error) {
+      handleAxiosError(error);
+    }
   };
+  
 
   const handleAxiosError = (error) => {
     let errorMessage = "An error occurred.";
@@ -222,7 +223,7 @@ function Animal() {
   ];
 
   // Rows for DataGrid
-  const rows = searchResults.map((animalItem) => ({
+  const rows = animal.map((animalItem) => ({
     id: animalItem.id,
     name: animalItem.name,
     species: animalItem.species,

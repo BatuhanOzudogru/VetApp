@@ -158,7 +158,8 @@
   top: 88%;
   left: 72%;
   width: 240px;
-  height: 45px;
+  height: 55px;
+  padding: 1px;
   border: 1px solid #ccc;
   display: flex;
   align-items: center;

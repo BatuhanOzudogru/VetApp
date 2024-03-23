@@ -20,6 +20,14 @@ export const getAnimalByName = async (name) => {
   );
   return data;
 };
+
+export const getAnimalByCustomerName = async (name) => {
+  const { data } = await axios.get(
+    `${BASE_URL}/v1/animals/by-customer-name/${name}`
+  );
+  return data;
+};
+
 //This function creates an animal in the database.
 export const createAnimal = async (animal) => {
   const { data } = await axios.post(

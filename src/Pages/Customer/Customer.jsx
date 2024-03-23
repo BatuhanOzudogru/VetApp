@@ -4,6 +4,7 @@ import UpdateIcon from "@mui/icons-material/Update";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
+import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, Button, Alert } from "@mui/material";
 import {
   getCustomers,
@@ -43,6 +44,23 @@ function Customer() {
       handleAxiosError(error);
     }
   };
+
+  // Handle search operation -New-
+  const handleSearch = async () => {
+    try {
+      if (searchTerm == "") {
+        const data = await getCustomers();
+        setCustomers(data.data.items);
+      } else {
+        const data = await getCustomerByName(searchTerm);
+        setCustomers(data.data);
+      }
+    } catch (error) {
+      handleAxiosError(error);
+    }
+  };
+  
+
 
   // Delete customer by ID
   const handleDelete = async (id) => {
@@ -153,10 +171,16 @@ function Customer() {
     },
   ];
 
-  // Filtered rows based on search term
-  const rows = customers.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Mapped rows based on search term
+  const rows = customers.map((item) => ({
+    id: item.id,
+    name: item.name,
+    phone: item.phone,
+    mail: item.mail,
+    address: item.address,
+    city: item.city
+  }));
+  
 
   return (
     <>
@@ -167,6 +191,7 @@ function Customer() {
         <div className="table">
           {/* Table header and search input */}
           <h2 className="table-header">Customer List</h2>
+          <div className="customer-search">
           <input
             className="table-search"
             type="text"
@@ -174,6 +199,16 @@ function Customer() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+             <Button
+                    className="scnd-btn"
+                    variant="contained"
+                    endIcon={<SearchIcon />}
+                    onClick={handleSearch}
+                  >
+                    Search
+                  </Button>
+          </div>
+          
         </div>
 
         <div style={{ height: 300, width: "100%" }}>

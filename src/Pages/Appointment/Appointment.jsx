@@ -33,14 +33,14 @@ function Appointment() {
   // States for new and updated appointments
   const [newAppointment, setNewAppointment] = useState({
     appointmentDate: "",
-    doctor: { id: "doctor" },
-    animal: { id: "animal" },
+    doctor: { id: "" },
+    animal: { id: "" },
   });
   // States for new and updated appointments
   const [updateAppointment, setUpdateAppointment] = useState({
     appointmentDate: "",
-    doctor: { id: "doctor" },
-    animal: { id: "animal" },
+    doctor: { id: "" },
+    animal: { id: "" },
   });
 
   const [notification, setNotification] = useState({
@@ -83,8 +83,13 @@ function Appointment() {
       });
       setUpdateAppointment({
         appointmentDate: "",
-        doctor: { id: "doctor" },
-        animal: { id: "animal" },
+        doctor: { id: "" },
+        animal: { id: "" },
+      });
+      setNewAppointment({
+        appointmentDate: "",
+        doctor: { id: "" },
+        animal: { id: "" },
       });
       handleSuccessfulResponse("Appointment updated successfully.", "success");
     } catch (error) {
@@ -99,8 +104,13 @@ function Appointment() {
       });
       setNewAppointment({
         appointmentDate: "",
-        doctor: { id: "doctor" },
-        animal: { id: "animal" },
+        doctor: { id: "" },
+        animal: { id: "" },
+      });
+      setUpdateAppointment({
+        appointmentDate: "",
+        doctor: { id: "" },
+        animal: { id: "" },
       });
       handleSuccessfulResponse("Appointment created successfully.", "success");
     } catch (error) {
@@ -108,8 +118,8 @@ function Appointment() {
     }
   };
 
-  const [selectedDoctor, setSelectedDoctor] = useState("doctor");
-  const [selectedDoctorName, setSelectedDoctorName] = useState("doctor");
+  const [selectedDoctor, setSelectedDoctor] = useState("");
+  const [selectedDoctorName, setSelectedDoctorName] = useState("");
   // Function to handle doctor change
   const handleDoctorChange = (e) => {
     setSelectedDoctor(e.target.value);
@@ -120,14 +130,14 @@ function Appointment() {
     setSelectedDoctor(doctor);
   };
 
-  const [selectedAnimal, setSelectedAnimal] = useState("animal");
+  const [selectedAnimal, setSelectedAnimal] = useState("");
   // Function to handle animal change
   const handleAnimalChange = (e) => {
     setSelectedAnimal(e.target.value);
   };
 
-  const [searchDoctor, setSearchDoctor] = useState("doctor");
-  const [searchAnimal, setSearchAnimal] = useState("animal");
+  const [searchDoctor, setSearchDoctor] = useState("");
+  const [searchAnimal, setSearchAnimal] = useState("");
 
   const [searchStartDateAnimal, setSearchStartDateAnimal] = useState("");
   const [searchEndDateAnimal, setSearchEndDateAnimal] = useState("");
@@ -144,6 +154,7 @@ function Appointment() {
       setAppointment(data.data);
     });
   };
+
   // Function to get appointments by doctor and period
   const handleSearchByDoctorAndPeriod = () => {
     getAppointmentsByDoctorIdAndPeriod(
@@ -157,8 +168,8 @@ function Appointment() {
   // Function to clear search
   const handleClearSearch = () => {
     setAppointment(originalAppointment);
-    setSearchAnimal("animal");
-    setSearchDoctor("doctor");
+    setSearchAnimal("");
+    setSearchDoctor("");
     setSearchStartDateAnimal("");
     setSearchEndDateAnimal("");
     setSearchStartDateDoctor("");
@@ -271,7 +282,7 @@ function Appointment() {
                   value={searchAnimal}
                   onChange={(e) => setSearchAnimal(e.target.value)}
                 >
-                  <option value="animal">Select Animal</option>
+                  <option value="">Select Animal</option>
                   {animal.map((animal) => {
                     return (
                       <option key={animal.id} value={animal.id}>
@@ -331,7 +342,7 @@ function Appointment() {
                   value={searchDoctor}
                   onChange={(e) => setSearchDoctor(e.target.value)}
                 >
-                  <option value="doctor">Select Doctor</option>
+                  <option value="">Select Doctor</option>
                   {doctor.map((doctor) => {
                     return (
                       <option key={doctor.id} value={doctor.id}>
@@ -422,7 +433,7 @@ function Appointment() {
                     });
                   }}
                 >
-                  <option value="doctor">Select Doctor</option>
+                  <option value="">Select Doctor</option>
                   {doctor.map((doctor) => {
                     return (
                       <option key={doctor.id} value={doctor.id}>
@@ -486,7 +497,7 @@ function Appointment() {
                     });
                   }}
                 >
-                  <option value="animal">Select Animal</option>
+                  <option value="">Select Animal</option>
                   {animal.map((animal) => {
                     return (
                       <option key={animal.id} value={animal.id}>

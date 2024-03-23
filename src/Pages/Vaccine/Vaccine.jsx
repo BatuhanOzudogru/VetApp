@@ -35,23 +35,23 @@ function Vaccine() {
     code: "",
     protectionStartDate: "",
     protectionFinishDate: "",
-    animal: { id: "animal" },
-    report: { id: "report" },
+    animal: { id: "" },
+    report: { id: "" },
   });
   const [updateVaccine, setUpdateVaccine] = useState({
     name: "",
     code: "",
     protectionStartDate: "",
     protectionFinishDate: "",
-    animal: { id: "animal" },
-    report: { id: "report" },
+    animal: { id: "" },
+    report: { id: "" },
   });
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [animalId, setAnimalId] = useState("");
 
   // State variables for selected animal and notification
-  const [selectedAnimal, setSelectedAnimal] = useState("animal");
+  const [selectedAnimal, setSelectedAnimal] = useState("");
   const [notification, setNotification] = useState({
     message: "",
     severity: "",
@@ -99,16 +99,16 @@ function Vaccine() {
         code: "",
         protectionStartDate: "",
         protectionFinishDate: "",
-        animal: { id: "animal" },
-        report: { id: "report" },
+        animal: { id: "" },
+        report: { id: "" },
       });
       setUpdateVaccine({
         name: "",
         code: "",
         protectionStartDate: "",
         protectionFinishDate: "",
-        animal: { id: "animal" },
-        report: { id: "report" },
+        animal: { id: "" },
+        report: { id: "" },
       });
       // Clear filteredReports
       setFilteredReports([]);
@@ -148,16 +148,16 @@ function Vaccine() {
         code: "",
         protectionStartDate: "",
         protectionFinishDate: "",
-        animal: { id: "animal" },
-        report: { id: "report" },
+        animal: { id: "" },
+        report: { id: "" },
       });
       setNewVaccine({
         name: "",
         code: "",
         protectionStartDate: "",
         protectionFinishDate: "",
-        animal: { id: "animal" },
-        report: { id: "report" },
+        animal: { id: "" },
+        report: { id: "" },
       });
       // Clear filteredReports
       setFilteredReports([]);
@@ -531,7 +531,7 @@ const handleSuccessfulResponse = (message, severity) => {
                     });
                   }}
                 >
-                  <option value="animal">Animal</option>
+                  <option value="">Animal</option>
                   {animal.map((animal) => {
                     return (
                       <option value={animal.id} key={animal.id}>
@@ -634,7 +634,7 @@ display: none;
             <div className="vaccine-report-item">
               <div>
                 {/* Display updated report title */}
-                {updateVaccine.report.title || newVaccine.report.title || 'Report Title'}
+                {updateVaccine.report.title || newVaccine.report.title || 'Select an animal from the combobox on the left and select a report by clicking on the "✓" sign.'}
               </div>
             </div>
 

@@ -21,6 +21,11 @@
   font-size: 18px; 
 }
 
+.customer-search input{
+  height: 37px;
+  margin-right: 5px;
+}
+
 /* Styles for the customer operations section */
 .customer-operations {
   display: flex; 
